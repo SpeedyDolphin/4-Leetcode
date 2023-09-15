@@ -1,5 +1,6 @@
 
 # Definition for a Node.
+#TODO UNFINISHED 
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
@@ -15,6 +16,6 @@ class Solution:
 
     def copyNode(self, ogNode, newNode):
         newNode.val = ogNode.val
-        newNode.next =  
+        newNode.next
 
         
