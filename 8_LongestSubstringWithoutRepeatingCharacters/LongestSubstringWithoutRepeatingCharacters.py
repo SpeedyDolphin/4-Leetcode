@@ -47,7 +47,40 @@ def lengthOfLongestSubstring(s, debug):
             print(f'Last entry : {len(s[start:])} - {s[start:]}')
             print(f'Current Longest: {longest}')
         return len(s)-start if (len(s)-start > longest) else longest
+'''
+Runtime
+61
+ms
+Beats
+29.08%
+of users with Python
 
+Memory
+2.28
+MB
+Beats
+56.80%
+of users with Python
+
+'''
+def attempt2(s):
+    if(len(s) == 0):
+            return 0
+
+    memoryBank = dict()
+    start = 0
+    longest = 1
+
+    for i in range(len(s)):
+        #Reset
+        if s[i] in memoryBank.keys() and memoryBank[s[i]] >= start:
+            # print(s[start:i])
+            longest = i - start if i-start > longest else longest
+            start = memoryBank[s[i]] + 1
+
+        memoryBank[s[i]] = i
+
+    return len(s)-start if (len(s)-start > longest) else longest
 
 if __name__ == "__main__":
     s1 = 'abcabcbb' # expected 3
