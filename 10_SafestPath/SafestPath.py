@@ -29,6 +29,8 @@ def maximumSafenessFactor(grid):
     if grid[0][0] == 0 or grid[maxCol][maxRow] == 0:
         return 0 
     
+
+    #use a modified dijkstra's shortest path algorithm. The cost to get to a certain place is the smallest safety factor
     disGrid = distanceGrid(grid)
     disGrid[0][0].voyageSafe = disGrid[0][0].spotSafe
     heap = heapq()
